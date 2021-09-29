@@ -4,6 +4,8 @@ from datetime import date
 import calendar
 from calendar import HTMLCalendar
 
+from .models import Events
+
 # Create your views here.
 
 
@@ -13,10 +15,25 @@ def index(request, year=date.today().year, month=date.today().month):
     month_name = calendar.month_name[month]
     today_date = date.today()
 
-    if year < 2000 or year > 2099:
+    if year < 1900 or year > 2099:
         year = today_date.year
 
     title = f"MyClub Event Calendar - {today_date.day}/{month_name}/{year}"
     cal = HTMLCalendar().formatmonth(year, month)
 
-    return HttpResponse(f"<h1>{title}</h1><p>{cal}</p>")
+    announcements = [
+        {"date": "6-10-2020", "announcement": "Club Registration Open"},
+        {"date": "4-21-2020", "announcement": "Smith Elected New Club President"},
+    ]
+
+    return render(
+        request,
+        "calendar_base.html",
+        {"title": title, "cal": cal, "announcements": announcements},
+    )
+
+
+def get_events(request):
+    event_list = Events.objects.all()
+
+    return render(request, "event_list.html", {"event_list": event_list})
