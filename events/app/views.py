@@ -4,7 +4,7 @@ from datetime import date
 import calendar
 from calendar import HTMLCalendar
 
-from .models import Events
+from .models import Event
 
 # Create your views here.
 
@@ -34,6 +34,6 @@ def index(request, year=date.today().year, month=date.today().month):
 
 
 def get_events(request):
-    event_list = Events.objects.all()
+    event_list = Event.objects.all()
 
     return render(request, "event_list.html", {"event_list": event_list})
