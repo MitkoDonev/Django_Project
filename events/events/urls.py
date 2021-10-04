@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from forms import contact
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("contact/", contact.contact, name="contact"),
     path(
         "admin/password_reset/",
         auth_views.PasswordChangeView.as_view(),
