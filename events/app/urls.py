@@ -8,4 +8,8 @@ urlpatterns = [
     ),
     path("events/", views.get_events, name="show-events"),
     path("add_venue/", views.add_venue, name="add-venue"),
+    path("gentext/", views.generate_text, name="generate-text-file"),
+    path("gencsv/", views.generate_csv, name="generate-csv-file"),
+    path("genpdf/", views.generate_pdf, name="generate-pdf-file"),
+    path("getsubs/", views.list_subscribers, name="list-subscribers"),
 ]
