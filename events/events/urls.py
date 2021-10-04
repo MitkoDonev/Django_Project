@@ -18,6 +18,10 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from forms import contact
 
+# admin.site.site_header = "MyClub Administration"
+# admin.site.site_title = "MyClub Site Admin"
+# admin.site.index_title = "MyClub Site Admin Home"
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("contact/", contact.contact, name="contact"),

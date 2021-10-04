@@ -1,4 +1,5 @@
 from django.urls import path, re_path
+from .admin import admin_site
 from . import views
 
 urlpatterns = [
@@ -12,4 +13,5 @@ urlpatterns = [
     path("gencsv/", views.generate_csv, name="generate-csv-file"),
     path("genpdf/", views.generate_pdf, name="generate-pdf-file"),
     path("getsubs/", views.list_subscribers, name="list-subscribers"),
+    path("eventsadmin/", admin_site.urls),
 ]
