@@ -1,1 +1,1 @@
-# Django_Views
+# Django_Project
