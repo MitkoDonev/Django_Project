@@ -20,7 +20,7 @@ from forms.forms import VenueForm
 
 def generate_text(request):
     response = HttpResponse(content_type="text/plain")
-    response["Content-Discription"] = "attachment"
+    response["Content-Discription"] = 'attachment; filename="generate_text.txt"'
 
     lines = [
         "I will not expose the ignorance of the faculty.\n",
@@ -34,7 +34,7 @@ def generate_text(request):
 
 def generate_csv(request):
     response = HttpResponse(content_type="text/csv")
-    response["Content-Discription"] = "attachment"
+    response["Content-Discription"] = 'attachment; filename="generate_csv.csv"'
 
     writer = csv.writer(response)
     venues = Venue.venues.all()
