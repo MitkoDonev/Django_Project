@@ -24,7 +24,7 @@ from forms import contact
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("contact/", contact.contact, name="contact"),
+    path("contact/", contact.ContactUs.as_view(), name="contact"),
     path(
         "admin/password_reset/",
         auth_views.PasswordChangeView.as_view(),
