@@ -1,1 +1,14 @@
 # Django_Project
+    - Models
+    - Views
+    - Templates
+    - Admin
+    - Forms
+    - Advanced Models
+    - Advanced Views
+    - Advanced Templates
+    - Advanced Admin
+    - Class Based Views
+    - Advanced User Management
+    - Advanced Forms
+    - Databases
